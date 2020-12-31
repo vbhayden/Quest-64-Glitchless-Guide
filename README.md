@@ -24,12 +24,12 @@ Some of the bosses will be much simpler with a few cutoffs in mind.  Rather than
 
 |Boss|Boss Health|Earth Goal|Water Goal|Health Goal|Mana Goal|Comments|
 |-|-|-|-|-|-|-|
-|**Solvaring**|200|1|16-17|60+|15|59.5-60 Health to survive 3 attacks|
-|**Zelse**|680|24|19 or 23|82+|19+|82+ Health to survive 2 attacks|
-|**Nepty**|880|36|25|-|21+|Barrier at Earth 36, 21 mana for 7 casts|
-|**Shilf**|1000|-|-|115+|22+|115+ Health to survive two attacks|
-|**Fargo**|1500|-|-|-|24+|24 Mana for cleaner spell rotation|
+|**Solvaring**|200|1|16-17|60+|15|Survive 3 attacks|
+|**Zelse**|680|24|19 or 23|82+|19+|Survive 2 attacks|
+|**Nepty**|880|36|25|-|21+|Barrier at Earth 36|
+|**Shilf**|1000|-|-|115+|22+|Survive two attacks|
+|**Fargo**|1500|-|-|-|24+|Cleaner spell rotation|
 |**Guilty**|1800|-|-|-|-|Two melee attacks will kill you|
-|**King Beigis**|1900|-|-|182+|25+|At 25, Mint Leaves grant an extra spell|
+|**King Beigis**|1900|-|-|182+|25+|-|
 |**Mammon**|2300|-|-|-|-|-|
 
