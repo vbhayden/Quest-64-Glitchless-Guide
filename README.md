@@ -29,7 +29,7 @@ Some of the bosses will be much simpler with a few cutoffs in mind.  Rather than
 |**Nepty**|880|36|25|-|21+|Barrier at Earth 36|
 |**Shilf**|1000|-|-|115+|22+|Survive two attacks|
 |**Fargo**|1500|-|-|-|24+|Cleaner spell rotation|
-|**Guilty**|1800|-|-|-|-|Two melee attacks will kill you|
+|**Guilty**|1800|-|-|-|-|Two melee attacks always kill you|
 |**King Beigis**|1900|-|-|183+|25+|Survive 2 attacks|
 |**Mammon**|2300|-|-|-|-|-|
 
