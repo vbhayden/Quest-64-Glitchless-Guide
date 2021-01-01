@@ -20,7 +20,7 @@ with the last bullet being particularly important for more nuanced time manageme
 
 ### Boss Cheat Sheet
 
-Some of the bosses will be much simpler with a few cutoffs in mind.  Rather than bury them within the document, we'll include a table here for quick reference.
+We try to have specific stat / spirit values to both help with the bosses themselves and provide a mile marker for how big Brian is becoming throughout the run. The main ones are included here in a table here for quick reference.
 
 |Boss|Boss Health|Earth Goal|Water Goal|Health Goal|Mana Goal|Comments|
 |-|-|-|-|-|-|-|
@@ -33,3 +33,4 @@ Some of the bosses will be much simpler with a few cutoffs in mind.  Rather than
 |**King Beigis**|1900|-|-|183+|25+|Survive 2 attacks|
 |**Mammon**|2300|-|-|-|-|-|
 
+### Starting the Run
