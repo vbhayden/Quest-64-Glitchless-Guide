@@ -33,4 +33,6 @@ We try to have specific stat / spirit values to both help with the bosses themse
 |**King Beigis**|1900|-|-|183+|25+|Survive 2 attacks|
 |**Mammon**|2300|-|-|-|-|-|
 
-### Starting the Run
+### Guide Sections
+
+To simplify reading, we will break the guide into a boss-related sections.
