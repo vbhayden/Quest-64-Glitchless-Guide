@@ -38,7 +38,7 @@ We try to have specific stat / spirit values to both help with the bosses themse
 
 |⚔|Boss Health|Earth Goal|Water Goal|Health Goal|Mana Goal|Comments|
 |-|-|-|-|-|-|-|
-|**Solvaring**|200|1|16-17+|61+|15|Survive 3 attacks|
+|**Solvaring**|200|1|16-17+|61+|15+|Survive 3 attacks|
 |**Zelse**|680|24|19 or 23|82+|19+|Survive 2 attacks|
 |**Nepty**|880|36|25|98+|21+|You get Magic Barrier at 36 Earth|
 |**Shilf**|1000|48+|25|115+|22+|Survive two attacks|
