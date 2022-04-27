@@ -6,6 +6,8 @@ If you are reading this, then you likely have an interest in either learning how
 
 This guide will include a few notes on how to optimize the run overall, but those will be included towards the end of that section.
 
+**🛑 Before Continuing:** While this guide will eventually become more thorough and beginner-friendly, atm the reader is assumed to be familiar with the base game and location of spirits / items.  If this isn't the case, then watching a VOD of Glitchless All Spirits on 2x speed may be more useful atm.
+
 For more information, **[Join the Discord](https://discord.gg/mZnpAt2ZsY)**!
 
 ## Table of Contents 📝
@@ -59,29 +61,26 @@ Each section will begin with a table outlining a beginner-friendly set of stats 
 |-|-|-|-|-|-|-|
 |**Solvaring**|200|1|16-17+|61+|15|**20 minutes**|
 
-### Melrode Monastary
+### Melrode Monastary and Melrode Town
 
-Items:
-- 1x Honey Break (chest)
-- 1x Fresh Bread (talk to the kid near Honey Bread chest)
+Game start!  Click through the intro dialogue, max your text speed, and then pick up everything but the basement items.
 
-Spirits:
-1. Hay Pile next to horse
+**Objectives**:
+1. Mash through opening dialogue
+2. Open the menu and max your text speed
+3. Get the **Honey Bread** (chest) and **Fresh Bread** (giver)
+4. Leave the Monastary
+5. Pick up the hay spirit
+6. Run downhill and enter Melrode Town
+7. Pick up the White Wings
+8. Go into the farmer's house and get the Fresh Bread
+9. Pick up the field 
+10. Use White Wings
+11. Leave Melrode
 
-When the game starts, click through the opening dialogue and open your menu.  From there, **max out your Text Speed setting** -- this will reduce the number of times we need to press A+Z when talking to people or reading prompts.  Run through the monastary, pick up the breads, and leave through the main door.
+### Walk to Dondoran
 
-Pick up the hay spirit, turn around, and run downhill into Melrode.
 
-### Melrode
-
-Items:
-- 1x White Wings (Wing vendor, gold sign on house)
-- 1x Fresh Bread (chest in farmer's house)
-
-Spirits:
-1. Far corner of upper farm area
-
-When entering Melrode, 
 
 ## Zelse
 
