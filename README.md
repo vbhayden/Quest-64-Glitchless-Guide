@@ -14,7 +14,7 @@ For more information, **[Join the Discord](https://discord.gg/mZnpAt2ZsY)**!
 - [Route Introduction](#route-introduction)
   - [Boss Cheat Sheet](#boss-cheat-sheet)
   - [Section Breakdown](#section-breakdown)
-1. [Solvaring](#solvaring)
+1. [Solvaring](#startsolvaring)
 2. [Zelse](#zelse)
 3. [Nepty](#nepty)
 4. [Shilf](#shilf)
@@ -55,32 +55,53 @@ To simplify reading, we will break the guide into a boss-related sections.
 
 Each section will begin with a table outlining a beginner-friendly set of stats for Brian to have when fighting that boss, as well as a few notes on how that fight can go sideways.  The section will then cover the walk from the previous boss, including dangerous or slow mobs that may require different approaches.
 
-## Solvaring
+## Start -> Solvaring
 
-|⚔|Boss Health|Earth Goal|Water Goal|Health Goal|Mana Goal|Est. Time|
-|-|-|-|-|-|-|-|
-|**Solvaring**|200|1|16-17+|61+|15|**20 minutes**|
+|⭐|Earth Goal|Water Goal|Health Goal|Mana Goal|Est. Time|
+|-|-|-|-|-|-|
+|200|1|16-17+|61+|15|**20 minutes**|
 
 ### Melrode Monastary and Melrode Town
 
-Game start!  Click through the intro dialogue, max your text speed, and then pick up everything but the basement items.
+Click through the intro dialogue, max your text speed, and then pick up everything but the basement items.
 
 **Objectives**:
-1. Mash through opening dialogue
-2. Open the menu and max your text speed
-3. Get the **Honey Bread** (chest) and **Fresh Bread** (giver)
-4. Leave the Monastary
-5. Pick up the hay spirit
-6. Run downhill and enter Melrode Town
-7. Pick up the White Wings
-8. Go into the farmer's house and get the Fresh Bread
-9. Pick up the field 
-10. Use White Wings
-11. Leave Melrode
+1. Mash through opening dialogue.
+2. Open the menu and max your text speed.
+3. Get the **Honey Bread** (chest) and **Fresh Bread** (giver).
+4. Leave the Monastary.
+5. Pick up the hay spirit.
+6. Run downhill and enter Melrode Town.
+7. Pick up the White Wings.
+8. Go into the farmer's house and get the Fresh Bread.
+9. Pick up the field.
+10. Use White Wings.
+11. Leave Melrode.
 
 ### Walk to Dondoran
 
 
+### Dondoran
+
+We're just here to pick up a spirit and a Dew Drop if necessary.
+
+**Objectives**:
+1. Pick up a Dew Drop from the tavern if you didn't get one from Hell Hounds.
+2. Pick up the Yellow Wings.
+3. Get the spirit at the bottom of the sand pit.
+4. Use the Yellow Wings and leave.
+
+After leaving Dondoran, walk to Connor Forest and take encounters if you need to, typically if your Water is less than 9.
+
+### Connor Forest
+
+
+
+### Boss
+
+|⚔|Boss Health|Earth Goal|Water Goal|Health Goal|Mana Goal|Est. Time|
+|-|-|-|-|-|-|-|
+|**Solvaring**|200|1|16-17+|61+|15|**20 minutes**|
 
 ## Zelse
 
