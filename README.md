@@ -11,25 +11,26 @@ This guide will include a few notes on how to optimize the run overall, but thos
 For more information, **[Join the Discord](https://discord.gg/mZnpAt2ZsY)**!
 
 ## Table of Contents 📝
-- [Route Introduction](#route-introduction)
-  - [Boss Cheat Sheet](#boss-cheat-sheet)
-  - [Section Breakdown](#section-breakdown)
-1. [Solvaring](#startsolvaring)
-2. [Zelse](#zelse)
-3. [Nepty](#nepty)
-4. [Shilf](#shilf)
-5. [Fargo](#fargo)
-6. [Guilty](#guilty)
-7. [King Beigis](#king-beigis)
-8. [Mammon](#mammon)
+1. [Route Introduction](#route-introduction)
+1. [Quick Tips](#route-introduction)
+1. [Solvaring](#solvaring)
+1. [Zelse](#zelse)
+1. [Nepty](#nepty)
+1. [Shilf](#shilf)
+1. [Fargo](#fargo)
+1. [Guilty](#guilty)
+1. [King Beigis](#king-beigis)
+1. [Mammon](#mammon)
 
 ## Route Introduction
 
+Within the Quest community, Glitchless categories have a reputation for being somewhat brutal.  Between reseting on bosses, moving backwards from random encounters, and associating disappointment with the `Miss!` sound, this has every Quest category can seem punishing.
+
 In short, this category has a few goals in mind.
 
-1. Surviving Solvaring
-2. Learning Avalanche for Zelse
-3. Killing Bosses with Magic Barrier + Avalanche
+1. Survive Solvaring
+2. Learn Avalanche for Zelse
+3. Kill Bosses with Magic Barrier + Avalanche
 4. Grind Defense along the way
 
 For the last bit, we can accomplish this by intentionally getting hit by enemies that cast multi-hit moves like Wind Cutter or Homing Arrow.  
@@ -56,10 +57,6 @@ To simplify reading, we will break the guide into a boss-related sections.
 Each section will begin with a table outlining a beginner-friendly set of stats for Brian to have when fighting that boss, as well as a few notes on how that fight can go sideways.  The section will then cover the walk from the previous boss, including dangerous or slow mobs that may require different approaches.
 
 ## Start -> Solvaring
-
-|⭐|Earth Goal|Water Goal|Health Goal|Mana Goal|Est. Time|
-|-|-|-|-|-|-|
-|200|1|16-17+|61+|15|**20 minutes**|
 
 ### Melrode Monastary and Melrode Town
 
