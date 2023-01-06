@@ -34,6 +34,7 @@ In short, this category has a few goals in mind.
 2. Learn Avalanche for Zelse
 3. Kill Bosses with Magic Barrier + Avalanche
 4. Grind Defense along the way
+5. Do not go backwards if you can avoid it
 
 For the last bit, we can accomplish this by intentionally getting hit by enemies that cast multi-hit moves like Wind Cutter or Homing Arrow.  
 
@@ -70,15 +71,19 @@ Click through the intro dialogue, max your text speed, and then pick up everythi
 3. Get the **Honey Bread** (chest) and **Fresh Bread** (giver).
 4. Leave the Monastary.
 5. Pick up the hay spirit.
-6. Run downhill and enter Melrode Town.
-7. Pick up the White Wings.
-8. Go into the farmer's house and get the Fresh Bread.
-9. Pick up the field.
-10. Use White Wings.
-11. Leave Melrode.
+6. Pick up the White Wings.
+7. Go into the farmer's house and get the Fresh Bread.
+8. Pick up the field spirit.
+9. Use White Wings.
+10. Leave Melrode.
 
 ### Walk to Dondoran
 
+Try to avoid enemy encounters on the way to Dondoran.  Fighting Hell Hounds if usually fine if they spawn in front of you.
+
+**Objectives**:
+1. Pick up all spirits along the way
+2. Kill Hell Hounds that spawn in front of you
 
 ### Dondoran
 
@@ -89,18 +94,40 @@ We're just here to pick up a spirit and a Dew Drop if necessary.
 2. Pick up the Yellow Wings.
 3. Get the spirit at the bottom of the sand pit.
 4. Use the Yellow Wings and leave.
-
-After leaving Dondoran, walk to Connor Forest and take encounters if you need to, typically if your Water is less than 9.
+5. Walk to Connor Forest
 
 ### Connor Forest
 
+The goal here will depend on how you plan to kill Solvaring.  This guide will assume the traditional High Defense route, but you are welcome to experiment with other routes etc.
 
+**Objectives**:
+1. Pick up all spirits
+2. Pick up Giant's Shoes from the small hut near the entrance
+3. Reach 16 Water minimum
+4. Grind to 61 HP minimum (see below)
+5. Enter Solvaring's room
 
-### Boss
+For the HP grind, fight Frog Knights and Marionastys while intentionally being hit by their Wind Cutter attacks.  It helps to split this grind up into multiple encounters, as these attacks only deal 1-2 damage once brian has been struck enough to have 55 HP.
+
+### Boss: Solvaring
+
+Solvaring is a primary reason why people dislike this category, as he's considered heavily RNG dependent.  This can be true, but this strategy will usually kill him.
+
+**Before starting the fight:** You can open the Honey Bread chest by hugging the leftmost wall before starting the encounter -- this will make the fight much easier.  Similarly, you can loot the Mint Leaves by hugging the right wall, but this route will not use them on the boss.
 
 |⚔|Boss Health|Earth Goal|Water Goal|Health Goal|Mana Goal|Est. Time|
 |-|-|-|-|-|-|-|
 |**Solvaring**|200|1|16-17+|61+|15|**20 minutes**|
+
+**Objectives**:
+1. Start the encounter near the Honey Bread ramp
+2. Face to the right and use the Giant's Shoes
+3. Hold Right when he casts the beam, you should be able to dodge it
+4. Run up to him and cast **Water Pillar 3**
+5. Cast **Water Pillar 1** as your main damage ability
+6. Eat a bread when your health is at or below 19
+
+Once the fight is over, loot the Mint Leaves and **cast Exit** to return to the forest entrance.  From there, run towards the forest gate, which will now be open.
 
 ## Zelse
 
