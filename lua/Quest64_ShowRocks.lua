@@ -1,3 +1,8 @@
+function Round(num, numDecimalPlaces)
+    local mult = 10 ^ (numDecimalPlaces or 0)
+    return math.floor(num * mult + 0.5) / mult
+end
+
 function RocksBrianToEnemy(BrianX1, BrianY1, EnemyX1, EnemyY1, Size1)
 
     local validRocks = 0
@@ -111,11 +116,11 @@ function HowManyRocksCurrently(x, y)
         color = "orange"
     end
 
-    gui.text(x, y + 15 * 1, "Boss Size:  " .. round(Size, 3))
-    gui.text(x, y + 15 * 2, "Boss Distance: " .. round(D, 3))
+    gui.text(x, y + 15 * 1, "Boss Size:  " .. Round(Size, 3))
+    gui.text(x, y + 15 * 2, "Boss Distance: " .. Round(D, 3))
 
     gui.text(x, y + 15 * 4, "Live")
-    gui.text(x, y + 15 * 5, "Positioning: " .. round(100 * comparedToBest, 0) .. "% optimal", color)
+    gui.text(x, y + 15 * 5, "Positioning: " .. Round(100 * comparedToBest, 0) .. "% optimal", color)
     gui.text(x, y + 15 * 6, "Intersections:  " .. validRocks .. " of " .. total)
     gui.text(x, y + 15 * 7, "Expected Rocks: " .. expected)
 
