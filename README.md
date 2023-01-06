@@ -8,6 +8,8 @@ This guide will include a few notes on how to optimize the run overall, but thos
 
 **🛑 Before Continuing:** While this guide will eventually become more thorough and beginner-friendly, atm the reader is assumed to be familiar with the base game and location of spirits / items.  If this isn't the case, then watching a VOD of Glitchless All Spirits on 2x speed may be more useful atm.
 
+**🛠 Work In Progress**: This guide will be slowly updated as I have time to make it, so things will likely be fairly barebones for awhile.
+
 For more information, **[Join the Discord](https://discord.gg/mZnpAt2ZsY)**!
 
 ## Table of Contents 📝
