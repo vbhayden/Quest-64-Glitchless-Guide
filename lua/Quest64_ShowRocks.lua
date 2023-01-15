@@ -1,6 +1,62 @@
+
+-- Maps for each boss
+--
+-- Beigis and Mammon share a map (Brannoch Castle),
+-- so they will be differentiated by submap
+--
+MAP_SOLVARING = 31
+MAP_ZELSE = 33
+MAP_NEPTY = 35
+MAP_SHILF = 28
+MAP_FARGO = 29
+MAP_GUILTY = 30
+MAP_BEIGIS = 30
+MAP_MAMMON = 34
+
+HITS_GUILTY = 74
+HITS_BEIGIS = 60
+
+MAP_BRANNOCH_CASTLE = 30
+
+SUBMAP_GUILTY = 10
+SUBMAP_BEIGIS = 14
+
+MapIDToBossHits = {
+    [MAP_SOLVARING] = 67,
+    [MAP_ZELSE] = 60,
+    [MAP_NEPTY] = 56,
+    [MAP_SHILF] = 56,
+    [MAP_FARGO] = 62,
+    [MAP_GUILTY] = 74,
+    [MAP_BEIGIS] = 60,
+    [MAP_MAMMON] = 160
+}
+
+function GetBossHits(mapID, subMapID)
+    if mapID == MAP_BRANNOCH_CASTLE then
+        if subMapID == SUBMAP_GUILTY then
+            return HITS_GUILTY
+        else
+            return HITS_BEIGIS
+        end
+    else
+        return MapIDToBossHits[mapID]
+    end
+end
+
 function Round(num, numDecimalPlaces)
     local mult = 10 ^ (numDecimalPlaces or 0)
     return math.floor(num * mult + 0.5) / mult
+end
+
+function GetExpectedRockHits(overlaps)
+    local TOTAL_POSSIBLE = 320
+    local ROCK_COUNT = 10
+
+    local percent = (1.0 * overlaps) / TOTAL_POSSIBLE
+    local expected = ROCK_COUNT * percent
+
+    return expected
 end
 
 function RocksBrianToEnemy(BrianX1, BrianY1, EnemyX1, EnemyY1, Size1)
@@ -24,11 +80,9 @@ function RocksBrianToEnemy(BrianX1, BrianY1, EnemyX1, EnemyY1, Size1)
         end
     end
 
-    local ROCK_COUNT = 10
     local percent = (1.0 * validRocks) / totalPossible
-    local expected = ROCK_COUNT * percent
 
-    return validRocks, 100.0 * percent, expected, totalPossible
+    return validRocks, 100.0 * percent, totalPossible
 end
 
 function HeatMapGenerator()
@@ -72,6 +126,23 @@ function HeatMapGenerator()
 
 end
 
+function GetMapIDs()
+    local mapID = memory.readbyte(0x8536B, "RDRAM")
+    local subMapID = memory.readbyte(0x8536F, "RDRAM")
+
+    return mapID, subMapID
+end
+
+function CalculateBossSize()
+    local sizeModifier = memory.readfloat(0x7C9E0, true, "RDRAM")
+    local trueSize = memory.readfloat(0x7C9E4, true, "RDRAM")
+    local size = sizeModifier * trueSize
+
+    return Round(size, 3)
+end
+
+LastMapID = -1
+LastSubMapID = -1
 BestExpected = 0
 BestIntersections = 0
 
@@ -84,16 +155,17 @@ function HowManyRocksCurrently(x, y)
 
     local EnemyX = memory.readfloat(0x7C9BC + 296 * (i - 1), true, "RDRAM")
     local EnemyY = memory.readfloat(0x7C9C4 + 296 * (i - 1), true, "RDRAM")
-    local SizeModifier = memory.readfloat(0x7C9E0 + 296 * (i - 1), true, "RDRAM")
-    local TrueSize = memory.readfloat(0x7C9E4 + 296 * (i - 1), true, "RDRAM")
-    local Size = SizeModifier * TrueSize
+    
     local XDiff = brianX - EnemyX
     local YDiff = brianY - EnemyY
+    
+    local size = CalculateBossSize()
 
     local D = math.sqrt(XDiff * XDiff + YDiff * YDiff)
     local A = math.atan2(XDiff, YDiff) * (180 / (math.pi))
 
-    local validRocks, percent, expected, total = RocksBrianToEnemy(brianX, brianY, EnemyX, EnemyY, Size)
+    local validRocks, percent, total = RocksBrianToEnemy(brianX, brianY, EnemyX, EnemyY, size)
+    local expected = GetExpectedRockHits(validRocks)
 
     if (BestExpected < expected) then
         BestExpected = expected
@@ -116,7 +188,7 @@ function HowManyRocksCurrently(x, y)
         color = "orange"
     end
 
-    gui.text(x, y + 15 * 1, "Boss Size:  " .. Round(Size, 3))
+    gui.text(x, y + 15 * 1, "Boss Size:  " .. size)
     gui.text(x, y + 15 * 2, "Boss Distance: " .. Round(D, 3))
 
     gui.text(x, y + 15 * 4, "Live")
@@ -127,10 +199,22 @@ function HowManyRocksCurrently(x, y)
     gui.text(x, y + 15 * 9, "Best")
     gui.text(x, y + 15 * 10, "Best Intersections:  " .. BestIntersections)
     gui.text(x, y + 15 * 11, "Best Expected Rocks: " .. BestExpected)
-
+    
 end
 
 while true do
+
+    local mapID, subMapID = GetMapIDs()
+    if (mapID ~= LastMapID or subMapID ~= LastSubMapID) then
+
+        local idealHits = GetBossHits(mapID, subMapID)
+        local expected = GetExpectedRockHits(idealHits)
+
+        LastMapID = mapID
+        LastSubMapID = subMapID
+        BestIntersections = idealHits
+        BestExpected = expected
+    end 
 
     HowManyRocksCurrently(50, 225)
 
