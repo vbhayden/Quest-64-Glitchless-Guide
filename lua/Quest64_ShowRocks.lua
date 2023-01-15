@@ -174,7 +174,7 @@ function HowManyRocksCurrently(x, y)
         BestIntersections = validRocks
     end
 
-    local comparedToBest = 1
+    local comparedToBest = -1
     if BestExpected > 0 then
         comparedToBest = expected / BestExpected
     end
@@ -186,13 +186,20 @@ function HowManyRocksCurrently(x, y)
         color = "yellow"
     elseif (comparedToBest > 0.5) then
         color = "orange"
+    elseif (comparedToBest == -1) then
+        color = "gray"
+    end
+
+    local comparedString = "Unknown"
+    if (comparedToBest ~= -1) then
+        comparedString = Round(100 * comparedToBest, 0) .. "% optimal"
     end
 
     gui.text(x, y + 15 * 1, "Boss Size:  " .. size)
     gui.text(x, y + 15 * 2, "Boss Distance: " .. Round(D, 3))
 
     gui.text(x, y + 15 * 4, "Live")
-    gui.text(x, y + 15 * 5, "Positioning: " .. Round(100 * comparedToBest, 0) .. "% optimal", color)
+    gui.text(x, y + 15 * 5, "Positioning: " .. comparedString, color)
     gui.text(x, y + 15 * 6, "Intersections:  " .. validRocks .. " of " .. total)
     gui.text(x, y + 15 * 7, "Expected Rocks: " .. expected)
 
@@ -208,12 +215,14 @@ while true do
     if (mapID ~= LastMapID or subMapID ~= LastSubMapID) then
 
         local idealHits = GetBossHits(mapID, subMapID)
-        local expected = GetExpectedRockHits(idealHits)
-
-        LastMapID = mapID
-        LastSubMapID = subMapID
-        BestIntersections = idealHits
-        BestExpected = expected
+        if (idealHits ~= nil) then
+            local expected = GetExpectedRockHits(idealHits)
+    
+            LastMapID = mapID
+            LastSubMapID = subMapID
+            BestIntersections = idealHits
+            BestExpected = expected
+        end
     end 
 
     HowManyRocksCurrently(50, 225)
