@@ -44,9 +44,46 @@ function GetBossHits(mapID, subMapID)
     end
 end
 
+function Factorial(k)
+	local result = 1;
+    
+    for i = 1, k do
+	    result = result * i;
+    end
+
+	return result;
+end
+
+function NChooseK(n, k)
+    local numerator = Factorial(n)
+    local demoninator = Factorial(n - k) * Factorial(k)
+
+    return numerator / demoninator
+end
+
+function Binomial(chance, successes, trials)
+    
+    local coefficient = NChooseK(trials, successes)
+    return coefficient * (chance ^ successes) * (1 - chance) ^ (trials - successes)
+end
+
 function Round(num, numDecimalPlaces)
     local mult = 10 ^ (numDecimalPlaces or 0)
     return math.floor(num * mult + 0.5) / mult
+end
+
+function Ternary ( cond , T , F )
+    if cond then return T else return F end
+end
+
+function GuiTextWithColor(row_index, text, color)
+    
+    local borderWidth = client.borderwidth();
+    gui.text(borderWidth + 40, 200 + row_index * 15, text, color)
+end
+
+function GuiText(row_index, text)
+    GuiTextWithColor(row_index, text, "white")
 end
 
 function GetExpectedRockHits(overlaps)
@@ -80,50 +117,9 @@ function RocksBrianToEnemy(BrianX1, BrianY1, EnemyX1, EnemyY1, Size1)
         end
     end
 
-    local percent = (1.0 * validRocks) / totalPossible
+    local hitChance = (1.0 * validRocks) / totalPossible
 
-    return validRocks, 100.0 * percent, totalPossible
-end
-
-function HeatMapGenerator()
-    MapSize = 120
-    brianX = math.floor(MapSize / 2)
-    brianY = math.floor(MapSize / 2)
-    Size = 6.3
-    -- Solvaring 10 + 8.4  Note: Solvaring is moving about half a pixel during standing.
-    -- Zelse 10 + 5.6  (Investigate Zelse Mid-Range)  Zelse moves about 0.4 pixels during standing.  He recoils a couple pixels when hit.
-    -- Nepty 10 + 4.9  Nepty moves about 0.4 px during standing.
-    -- Shilf 10 + 4.9  Shilf moves about 0.05
-    -- Fargo 10 + 7 moves about 0.05
-    -- Guilty 10 + 9.52 No movement
-    -- Beigis 10 + 6.3 No movement
-    -- Mammon 10 + 94.5 Moves around 0.6 px.
-    heatTextfile = "HeatMap"
-    heatDumpfile = heatTextfile .. ".txt"
-    io.output(heatDumpfile)
-
-    Max = 0
-
-    for EnemyX = 0, MapSize do
-        for EnemyY = MapSize, 0, -1 do
-            R = RocksBrianToEnemy(brianX, brianY, EnemyX, EnemyY, Size)
-            if R > Max then
-                Max = R
-            end
-            io.write(string.format("%02X ", R))
-        end
-        io.write("\n")
-    end
-
-    io.write("\n")
-    io.write("EnemySize: " .. Size)
-    io.write("\n")
-    io.write("Max: ", string.format("%02X", Max))
-    io.write("\n")
-    io.write("MapSize: " .. MapSize + 1)
-
-    io.output():close()
-
+    return validRocks, hitChance, totalPossible
 end
 
 function GetMapIDs()
@@ -146,7 +142,7 @@ LastSubMapID = -1
 BestExpected = 0
 BestIntersections = 0
 
-function HowManyRocksCurrently(x, y)
+function HowManyRocksCurrently(index)
 
     local brianX = memory.readfloat(0x7BACC, true, "RDRAM")
     local brianY = memory.readfloat(0x7BAD4, true, "RDRAM")
@@ -160,11 +156,9 @@ function HowManyRocksCurrently(x, y)
     local YDiff = brianY - EnemyY
     
     local size = CalculateBossSize()
+    local distance = math.sqrt(XDiff * XDiff + YDiff * YDiff)
 
-    local D = math.sqrt(XDiff * XDiff + YDiff * YDiff)
-    local A = math.atan2(XDiff, YDiff) * (180 / (math.pi))
-
-    local validRocks, percent, total = RocksBrianToEnemy(brianX, brianY, EnemyX, EnemyY, size)
+    local validRocks, hitChance, total = RocksBrianToEnemy(brianX, brianY, EnemyX, EnemyY, size)
     local expected = GetExpectedRockHits(validRocks)
 
     if (BestExpected < expected) then
@@ -195,18 +189,32 @@ function HowManyRocksCurrently(x, y)
         comparedString = Round(100 * comparedToBest, 0) .. "% optimal"
     end
 
-    gui.text(x, y + 15 * 1, "Boss Size:  " .. size)
-    gui.text(x, y + 15 * 2, "Boss Distance: " .. Round(D, 3))
+    GuiText(index + 1, "Boss Size:  " .. size)
+    GuiText(index + 2, "Boss Distance: " .. Round(distance, 3))
 
-    gui.text(x, y + 15 * 4, "Live")
-    gui.text(x, y + 15 * 5, "Positioning: " .. comparedString, color)
-    gui.text(x, y + 15 * 6, "Intersections:  " .. validRocks .. " of " .. total)
-    gui.text(x, y + 15 * 7, "Expected Rocks: " .. expected)
+    -- GuiText(index + 4, "Live")
+    GuiTextWithColor(index + 4, "Positioning: " .. comparedString, color)
+    GuiText(index + 5, "Intersections:  " .. validRocks .. " of " .. total)
+    GuiText(index + 6, "Expected Rocks: " .. expected)
 
-    gui.text(x, y + 15 * 9, "Best")
-    gui.text(x, y + 15 * 10, "Best Intersections:  " .. BestIntersections)
-    gui.text(x, y + 15 * 11, "Best Expected Rocks: " .. BestExpected)
+    -- GuiText(index + 9, "Best")
+    -- GuiText(index + 10, "Best Intersections:  " .. BestIntersections)
+    -- GuiText(index + 11, "Best Expected Rocks: " .. BestExpected)
     
+    GuiText(index + 8, "Avalanche Outcomes:")
+
+    local expectedHitsRounded = Round(expected, 0)
+    local atLeastOne = 1 - (1 - hitChance) ^ 10
+
+    for hits = 0, 10 do
+        local number = Ternary(hits < 10, " " .. hits, hits)
+        local chance = Binomial(hitChance, hits, 10)
+        local blocks = Round(chance * 100) / 4
+
+        GuiText(index + 9 + hits, number .. "|" .. string.rep("=", blocks))
+    end
+
+    return expected
 end
 
 while true do
@@ -225,7 +233,7 @@ while true do
         end
     end 
 
-    HowManyRocksCurrently(50, 225)
+    HowManyRocksCurrently(0)
 
     emu.frameadvance()
 end
